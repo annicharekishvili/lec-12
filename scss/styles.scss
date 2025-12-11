@@ -1,0 +1,91 @@
+@use 'reset.scss';
+@import 'variables';
+@import 'mixins';
+
+h1 {
+  color: $main-color;
+  font-size: 50px;
+  font-family: $main-font;
+}
+
+// %box {
+//   width: 100px;
+//   height: 100px;
+//   border-radius: 10px;
+// }
+
+// section {
+//   .box1 {
+//     @extend %box;
+//     background-color: $main-color;
+//   }
+//   .box2 {
+//     @extend %box;
+//     background-color: $secondary-color;
+//   }
+//   .box3 {
+//     @extend %box;
+//     background-color: $color;
+//   }
+// }
+
+.sec1 {
+  @include flex-container($gap: 20px);
+  background-color: $bg-color;
+  .box {
+    @include flex-container;
+  }
+  .box1 {
+    @include box($main-color);
+  }
+  .box2 {
+    @include box($secondary-color);
+  }
+  .box3 {
+    @include box($color);
+  }
+}
+
+.sec2 {
+  @include flex-container($gap: 20px, $justify: space-around);
+  background-color: $bg-color2;
+  margin-top: 20px;
+  .box {
+    @include flex-container;
+  }
+  .box1 {
+    @include box($secondary-color);
+  }
+  .box2 {
+    @include box($main-color);
+  }
+  .box3 {
+    @include box($color);
+  }
+}
+
+.sec3 {
+  @include flex-container($gap: 20px, $justify: flex-end);
+  background-color: $bg-color;
+  margin-top: 20px;
+  .main {
+    @include button;
+  }
+  .secondary {
+    @include button($bg-color: $secondary-color);
+  }
+  .danger {
+    @include button($bg-color: $danger);
+  }
+}
+
+header {
+  nav {
+    ul {
+      li {
+        a {
+        }
+      }
+    }
+  }
+}
